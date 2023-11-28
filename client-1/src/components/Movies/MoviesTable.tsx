@@ -21,7 +21,7 @@ type MoviesTableProps = {
 
 export const MoviesTable: FC<MoviesTableProps> = ({ movies }) => {
   return (
-    <TableContainer>
+    <TableContainer mt={4}>
       <Table>
         <Thead>
           <Th>Titre primaire</Th>
@@ -40,7 +40,8 @@ export const MoviesTable: FC<MoviesTableProps> = ({ movies }) => {
         <Tbody>
           {movies.map((movie) => {
             const emptyGenres =
-              movie.genres === null || movie.genres?.length === 0;
+              movie.genres === undefined || movie.genres?.length === 0;
+
             const noEndYear = movie.endYear === null;
 
             return (
@@ -80,7 +81,7 @@ export const MoviesTable: FC<MoviesTableProps> = ({ movies }) => {
                     {emptyGenres && <Badge>Aucun</Badge>}
                     {!emptyGenres &&
                       movie.genres?.map((genre) => {
-                        return <Badge>{genre}</Badge>;
+                        return <Badge colorScheme="blue">{genre}</Badge>;
                       })}
                   </Stack>
                 </Td>

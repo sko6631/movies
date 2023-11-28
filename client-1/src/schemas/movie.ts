@@ -7,14 +7,14 @@ export const movieSchema = z.object({
   primaryTitle: z.string(),
   originalTitle: z.string(),
   startYear: z.string(),
-  endYear: z.string().transform((value) => (value === "\\N" ? null : value)),
+  endYear: z.string().transform((value) => (value === "N" ? null : value)),
   runtimeMinutes: z
     .string()
-    .transform((value) => (value === "\\N" ? null : value))
+    .transform((value) => (value === "N" ? null : value))
     .transform((value) => Number(value)),
   genres: z
     .string()
-    .transform((value) => (value === "\\N" ? null : value))
+    .transform((value) => (value === "N" ? null : value))
     .transform((value) => value?.split(",")),
 });
 
