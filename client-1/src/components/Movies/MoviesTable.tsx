@@ -11,9 +11,9 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
-import { Movie } from "../../hooks/useMovies";
-import { MdAddShoppingCart } from "react-icons/md";
 import { FC } from "react";
+import { MdAddShoppingCart } from "react-icons/md";
+import { Movie } from "../../hooks/useMovies";
 
 type MoviesTableProps = {
   movies: Movie[];
