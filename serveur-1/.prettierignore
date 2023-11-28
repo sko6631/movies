@@ -1,0 +1,3 @@
+
+src/database/**/*.ts
+!src/common/**/*.ts

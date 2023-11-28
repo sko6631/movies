@@ -1,0 +1,23 @@
+image: node:18.17.1
+
+stages:
+  - quality
+  - build
+
+Lint:
+  stage: quality
+  script:
+    - npm ci --silent
+    - npm run lint
+Build:
+  stage: build
+  script:
+    - npm ci
+    - npm run build
+  artifacts:
+    paths:
+      - dist
+  only:
+    - master
+    - main
+    - develop

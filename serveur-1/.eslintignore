@@ -1,0 +1,5 @@
+*.*
+!src/**/*.ts
+!src/**/*.json
+src/database/migrations/*.ts
+src/types/*.ts
