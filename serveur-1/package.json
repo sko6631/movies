@@ -9,7 +9,7 @@
     "build": "nest build",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
     "start": "nest start",
-    "start:dev": "cross-env PORT=3004 DB_ADDRESS=127.0.0.1 DB_PORT=3306 DB_USERNAME=admin_yoa DB_PASSWORD=admin DATABASE=db_yoa nest start --watch",
+    "start:dev": "cross-env PORT=3004 DB_ADDRESS=127.0.0.1 DB_PORT=3306 DB_USERNAME=admin_movies DB_PASSWORD=admin DATABASE=db_movies nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/main",
     "lint": "npm-run-all lint:**",
@@ -24,7 +24,7 @@
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json",
     "pretypeorm": "npm run build",
-    "typeorm": "cross-env DB_ADDRESS=127.0.0.1 DB_PORT=3306 DB_USERNAME=admin_yoa DB_PASSWORD=admin DATABASE=db_yoa typeorm-ts-node-commonjs -d ./src/database/ormconfig.ts",
+    "typeorm": "cross-env DB_ADDRESS=127.0.0.1 DB_PORT=3306 DB_USERNAME=admin_movies DB_PASSWORD=admin DATABASE=db_movies typeorm-ts-node-commonjs -d ./src/database/ormconfig.ts",
     "typeorm:migration:generate": "npm run typeorm -- migration:generate",
     "typeorm:migration:create": "npm run typeorm -- migration:create -n",
     "typeorm:migration:run": "npm run typeorm -- migration:run"

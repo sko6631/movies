@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { DataSource } from 'typeorm';
 
+import { ArticlesModule } from './app/articles/articles.module';
 import { ConfigModule } from './shared/config/config.module';
 import { ConfigService } from './shared/config/config.service';
 
@@ -12,7 +13,8 @@ import { ConfigService } from './shared/config/config.service';
       useFactory: (configService: ConfigService) => configService.getDefaultDbConfig(),
       inject: [ConfigService]
     }),
-    ConfigModule
+    ConfigModule,
+    ArticlesModule
   ]
 })
 export class AppModule {
