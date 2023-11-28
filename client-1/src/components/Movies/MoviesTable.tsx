@@ -44,7 +44,7 @@ export const MoviesTable: FC<MoviesTableProps> = ({ movies }) => {
             const noEndYear = movie.endYear === null;
 
             return (
-              <Tr key={movie.tconst}>
+              <Tr key={movie.id}>
                 <Td maxWidth="300px">
                   <Text
                     whiteSpace="normal"

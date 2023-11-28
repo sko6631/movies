@@ -1,6 +1,7 @@
 import { z } from "zod";
 
 export const movieSchema = z.object({
+  id: z.number(),
   tconst: z.string(),
   titleType: z.string(),
   primaryTitle: z.string(),
