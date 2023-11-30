@@ -1,10 +1,11 @@
 <div class="list-group">
-    <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+    <a class="list-group-item list-group-item-action" [ngStyle]="{'background-color' : checkBasket(item) ? '#d2eef7' : ''}" *ngFor="let item of movies" (click)="addToBasket(item)">
+
       <div class="d-flex w-100 justify-content-between">
-        <h5 class="mb-1">List group item heading</h5>
-        <small>3 days ago</small>
+        <h5 class="mb-1">{{item.primaryTitle}} - {{item.startYear}}</h5>
+        <small>{{item.titleType}}</small>
       </div>
-      <p class="mb-1">Some placeholder content in a paragraph.</p>
-      <small>And some small print.</small>
+      <p class="mb-1">Original Title : {{item.originalTitle}}</p>
+      <small>Genre : {{item.genres != "\\N" ? item.genres : ""}}</small>
     </a>
   </div>

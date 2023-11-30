@@ -1,13 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-
-@Component({
-  selector: 'app-product',
-  templateUrl: './product.component.html',
-  styleUrls: ['./product.component.scss']
-})
-export class ProductComponent implements OnInit {
-
-  movies =[
+[
     {"tconst":"tt0030298","titleType":"tvMovie","primaryTitle":"Julius Caesar","originalTitle":"Julius Caesar","startYear":"1938","endYear":"\\N","runtimeMinutes":"101","genres":"Drama,History"},
     {"tconst":"tt0038309","titleType":"tvMovie","primaryTitle":"As You Like It","originalTitle":"As You Like It","startYear":"1946","endYear":"\\N","runtimeMinutes":"\\N","genres":"Drama"},
     {"tconst":"tt0038738","titleType":"tvMovie","primaryTitle":"A Midsummer Night's Dream","originalTitle":"A Midsummer Night's Dream","startYear":"1946","endYear":"\\N","runtimeMinutes":"150","genres":"Drama,Fantasy"},
@@ -108,26 +99,3 @@ export class ProductComponent implements OnInit {
     {"tconst":"tt0054985","titleType":"tvMovie","primaryTitle":"Hollywood: The Golden Years","originalTitle":"Hollywood: The Golden Years","startYear":"1961","endYear":"\\N","runtimeMinutes":"52","genres":"Documentary,History"},
     {"tconst":"tt0055042","titleType":"tvMovie","primaryTitle":"Das kartenspiel","originalTitle":"Das kartenspiel","startYear":"1961","endYear":"\\N","runtimeMinutes":"93","genres":"Crime"},
     {"tconst":"tt0055063","titleType":"tvMovie","primaryTitle":"Die Kurve","originalTitle":"Die Kurve","startYear":"1961","endYear":"\\N","runtimeMinutes":"55","genres":"Crime"}]
-
-  basket: object[] = []
-
-  addToBasket(item: object) : void{
-    if(this.basket.includes(item)){
-      this.basket.splice(this.basket.indexOf(item), 1)
-    }
-    else{
-      this.basket.push(item)
-    }
-    console.log(this.basket)
-  }
-
-  checkBasket(item: object) : boolean{
-    return this.basket.includes(item)
-  }
-
-  constructor() { }
-
-  ngOnInit(): void {
-  }
-
-}
