@@ -16,7 +16,7 @@ namespace E_movie.Controllers
         }
 
         [HttpGet]
-        public IActionResult Get(int page = 1, int pageSize = 10)
+        public IActionResult Get(int page, int pageSize)
         {
             // Vérifiez que les valeurs de page et pageSize sont valides
             if (page < 1)

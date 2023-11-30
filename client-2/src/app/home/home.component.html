@@ -1,9 +1,41 @@
-<div class="container-fluid">
-    <div class="row">
-        <div class="col-xl-10">
-            <app-product></app-product>
-        </div>
-        <div class="col-xl-2">
-            <app-basket></app-basket>
-        </div>
+<!-- home.component.html -->
+<mat-toolbar color="primary">
+    <span>E Movie</span>
+    <button mat-button routerLink="/cart">Voir le panier</button>
+</mat-toolbar>
+<div class="article-list">
+    <mat-table [dataSource]="articles">
+        <!-- Column definitions -->
+        <ng-container matColumnDef="primaryTitle">
+            <mat-header-cell *matHeaderCellDef> Title </mat-header-cell>
+            <mat-cell *matCellDef="let article"> {{ article.primaryTitle }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="years">
+            <mat-header-cell *matHeaderCellDef> Years </mat-header-cell>
+            <mat-cell *matCellDef="let article"> {{ article.startYear }} - {{ article.endYear }} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="genres">
+            <mat-header-cell *matHeaderCellDef> Genres </mat-header-cell>
+            <mat-cell *matCellDef="let article"> {{ article.genres }} 
+                <button mat-button (click)="addToCart(article.id)">Ajouter au panier</button></mat-cell>
+        </ng-container>
+
+        <!-- Table rows -->
+        <mat-header-row *matHeaderRowDef="['primaryTitle', 'years', 'genres']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['primaryTitle', 'years', 'genres']"></mat-row>
+    </mat-table>
+    <mat-form-field>
+        <mat-label>Items per page:</mat-label>
+        <mat-select [(value)]="pageSize" (selectionChange)="onPageSizeChange()">
+            <mat-option value="20">20</mat-option>
+            <mat-option value="50">50</mat-option>
+            <mat-option value="100">100</mat-option>
+            <mat-option value="200">200</mat-option>
+            <mat-option value="300">300</mat-option>
+            <mat-option value="500">500</mat-option>
+            <mat-option value="1000">1000</mat-option>
+        </mat-select>
+    </mat-form-field>
 </div>
