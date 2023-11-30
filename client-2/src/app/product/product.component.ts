@@ -109,6 +109,22 @@ export class ProductComponent implements OnInit {
     {"tconst":"tt0055042","titleType":"tvMovie","primaryTitle":"Das kartenspiel","originalTitle":"Das kartenspiel","startYear":"1961","endYear":"\\N","runtimeMinutes":"93","genres":"Crime"},
     {"tconst":"tt0055063","titleType":"tvMovie","primaryTitle":"Die Kurve","originalTitle":"Die Kurve","startYear":"1961","endYear":"\\N","runtimeMinutes":"55","genres":"Crime"}]
 
+  basket: object[] = []
+
+  addToBasket(item: object) : void{
+    if(this.basket.includes(item)){
+      this.basket.splice(this.basket.indexOf(item), 1)
+    }
+    else{
+      this.basket.push(item)
+    }
+    console.log(this.basket)
+  }
+
+  checkBasket(item: object) : boolean{
+    return this.basket.includes(item)
+  }
+
   constructor() { }
 
   ngOnInit(): void {
