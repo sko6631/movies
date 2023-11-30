@@ -1,5 +1,6 @@
 import { Stack, Text } from "@chakra-ui/react";
-import { MdOutlineLocalMovies, MdOutlineShoppingCart } from "react-icons/md";
+import { MdOutlineLocalMovies } from "react-icons/md";
+import { BasketButton } from "./Basket/BasketButton";
 
 export const Header = () => {
   return (
@@ -23,7 +24,7 @@ export const Header = () => {
           Movies
         </Text>
       </Stack>
-      <MdOutlineShoppingCart size="24px" />
+      <BasketButton />
     </Stack>
   );
 };
