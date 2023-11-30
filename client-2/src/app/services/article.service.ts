@@ -13,10 +13,10 @@ export class ArticlesService {
 
   constructor(private http: HttpClient) { }
 
-  getArticles(page: number , pageSize: number): Observable<Article[]> {
+  getArticles(offset: number , limit: number): Observable<Article[]> {
     const params = new HttpParams()
-      .set('page', page.toString())
-      .set('pageSize', pageSize.toString());
+      .set('offset', offset.toString())
+      .set('limit', limit.toString());
 
     return this.http.get<Article[]>(`${this.apiUrl}/api/articles`, { params });
   }
